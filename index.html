@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding Desire & Arousal — Paula Kirsch Therapy</title>
+
+<!-- SEO -->
+<meta name="description" content="A free psychoeducation quiz on desire and arousal in couples — myth vs. reality. Developed by Paula Kirsch, LCSW, CST, licensed therapist and certified sex therapist." />
+<meta name="author" content="Paula Kirsch, LCSW, CST" />
+<meta name="keywords" content="desire quiz, arousal couples, sex therapy, responsive desire, desire discrepancy, Paula Kirsch, couples therapy" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Understanding Desire & Arousal in Couples — A Free Quiz" />
+<meta property="og:description" content="Myth vs. reality — a short psychoeducation quiz to help you and your partner start a new kind of conversation. Developed by Paula Kirsch, LCSW, CST." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://paulak-boop.github.io/desire-quiz/" />
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/5fee338fe1367528108d3bd3/392223e1-4dc2-4af3-abac-76cd1b521fa9/ami_loved_social_share.png?content-type=image%2Fpng" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Paula Kirsch, LCSW, CST" />
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Understanding Desire & Arousal in Couples — A Free Quiz" />
+<meta name="twitter:description" content="Myth vs. reality — a short psychoeducation quiz to help you and your partner start a new kind of conversation. Developed by Paula Kirsch, LCSW, CST." />
+<meta name="twitter:image" content="https://images.squarespace-cdn.com/content/5fee338fe1367528108d3bd3/392223e1-4dc2-4af3-abac-76cd1b521fa9/ami_loved_social_share.png?content-type=image%2Fpng" />
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1a5185;
+    --sky:    #7ab2d0;
+    --mist:   #eaf5fb;
+    --gold:   #c9a96e;
+    --white:  #ffffff;
+    --ink:    #1e2b38;
+    --soft:   #f5f9fc;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--soft);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 560px;
+  }
+
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 1.4rem;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 em { font-style: italic; color: var(--sky); }
+
+  header p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #4a6275;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .progress-wrap { width: 100%; max-width: 560px; margin-bottom: 1.75rem; }
+
+  .progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 0.5rem;
+  }
+
+  .progress-track { height: 3px; background: var(--mist); border-radius: 2px; overflow: hidden; }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sky), var(--navy));
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 4px 24px rgba(26,81,133,0.08);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .card.fade-out { opacity: 0; transform: translateY(8px); }
+
+  .question-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.85rem;
+  }
+
+  .question-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--navy);
+    margin-bottom: 1.75rem;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .option-btn {
+    border: 1.5px solid var(--mist);
+    border-radius: 10px;
+    padding: 0.95rem 1.1rem;
+    background: var(--soft);
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.45;
+    transition: border-color 0.2s, background 0.2s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .option-btn:hover { border-color: var(--sky); background: var(--mist); }
+  .option-btn:active { transform: scale(0.98); }
+  .option-btn.correct { border-color: var(--navy); background: var(--mist); }
+  .option-btn.incorrect { border-color: #d9534f; background: #fff5f5; }
+  .option-btn.reveal-correct { border-color: var(--sky); background: var(--mist); }
+  .option-btn:disabled { cursor: default; }
+
+  .feedback {
+    margin-top: 1.25rem;
+    padding: 1.1rem 1.2rem;
+    border-radius: 10px;
+    background: var(--mist);
+    border-left: 3px solid var(--sky);
+    display: none;
+  }
+
+  .feedback.show { display: block; }
+
+  .feedback-verdict {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .feedback-verdict.correct { color: var(--navy); }
+  .feedback-verdict.incorrect { color: #b94040; }
+
+  .feedback p { font-size: 0.875rem; font-weight: 300; line-height: 1.6; color: #3a5468; }
+
+  .next-btn {
+    display: none;
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .next-btn.show { display: block; }
+  .next-btn:hover { background: #154070; }
+
+  .results { display: none; text-align: center; max-width: 560px; width: 100%; }
+  .results.show { display: block; }
+
+  .score-ring { width: 110px; height: 110px; margin: 0 auto 1.5rem; position: relative; }
+  .score-ring svg { transform: rotate(-90deg); }
+  .score-ring circle { fill: none; stroke-width: 8; stroke-linecap: round; }
+  .score-ring .track { stroke: var(--mist); }
+  .score-ring .fill { stroke: var(--sky); transition: stroke-dashoffset 1s ease; }
+
+  .score-number {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .score-number span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .score-number small {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sky);
+  }
+
+  .results-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(26,81,133,0.08);
+    margin-bottom: 1.5rem;
+  }
+
+  .results-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+
+  .results-card p { font-size: 0.88rem; font-weight: 300; line-height: 1.7; color: #4a6275; }
+
+  .takeaways { text-align: left; margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.65rem; }
+
+  .takeaway {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.84rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: #3a5468;
+  }
+
+  .takeaway::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 0.45em;
+  }
+
+  .restart-btn {
+    margin-top: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    border: 1.5px solid var(--sky);
+    border-radius: 10px;
+    color: var(--navy);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .restart-btn:hover { background: var(--navy); color: var(--white); }
+
+  .cta-block { margin-top: 1.5rem; background: var(--navy); border-radius: 16px; padding: 2rem; text-align: center; }
+
+  .cta-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 0.6rem;
+  }
+
+  .cta-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .cta-body { font-size: 0.875rem; font-weight: 300; line-height: 1.7; color: #a8c8dd; margin-bottom: 1.4rem; }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--gold);
+    color: var(--white);
+    border-radius: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .cta-btn:hover { background: #b8904f; transform: translateY(-1px); }
+
+  .homescreen-tip {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    max-width: 560px;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1rem;
+    background: var(--mist);
+    border: 1px solid var(--sky);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #3a5468;
+  }
+
+  .tip-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+  .tip-close {
+    margin-left: auto;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: var(--sky);
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0.2rem 0.3rem;
+    line-height: 1;
+  }
+
+  .disclaimer-box {
+    max-width: 560px;
+    width: 100%;
+    margin-top: 1.2rem;
+    padding: 1rem 1.2rem;
+    background: var(--mist);
+    border: 1px solid rgba(122,178,208,0.3);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .disclaimer-box p {
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #4a6275;
+    margin-bottom: 0.5rem;
+  }
+
+  .disclaimer-box p:last-child { margin-bottom: 0; }
+
+  footer { margin-top: 2rem; font-size: 0.72rem; color: #8aadc2; text-align: center; line-height: 1.7; }
+  footer a { color: var(--sky); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">Paula Kirsch Therapy</div>
+  <h1>Understanding <em>Desire</em><br>& Arousal in Couples</h1>
+  <p>A short psychoeducation quiz — myth vs. reality — to help you and your partner start a new kind of conversation.</p>
+</header>
+
+<div class="progress-wrap" id="progressWrap">
+  <div class="progress-meta">
+    <span id="qLabel">Question 1 of 7</span>
+    <span id="scoreLabel">0 correct</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill" style="width:0%"></div>
+  </div>
+</div>
+
+<div class="card" id="quizCard">
+  <div class="question-label" id="qTag">Myth or Reality?</div>
+  <div class="question-text" id="qText"></div>
+  <div class="options" id="optionsEl"></div>
+  <div class="feedback" id="feedbackEl">
+    <div class="feedback-verdict" id="verdictEl"></div>
+    <p id="explanationEl"></p>
+  </div>
+  <button class="next-btn" id="nextBtn">Next Question →</button>
+</div>
+
+<div class="results" id="resultsEl">
+  <div class="results-card">
+    <div class="score-ring">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <circle class="track" cx="55" cy="55" r="46"/>
+        <circle class="fill" id="ringFill" cx="55" cy="55" r="46"
+          stroke-dasharray="289" stroke-dashoffset="289"/>
+      </svg>
+      <div class="score-number">
+        <span id="finalScore">0/7</span>
+        <small>correct</small>
+      </div>
+    </div>
+    <h2 id="resultsHeading">Well done.</h2>
+    <p id="resultsSummary"></p>
+    <div class="takeaways" id="takeawaysEl"></div>
+  </div>
+  <button class="restart-btn" onclick="restart()">Take it again</button>
+
+  <div class="cta-block">
+    <p class="cta-eyebrow">Ready to go deeper?</p>
+    <h3 class="cta-heading">A conversation can change everything.</h3>
+    <p class="cta-body">If this quiz stirred something — curiosity, recognition, or relief that you're not alone — that's a good place to start. I offer a free 15-minute consultation to see if working together is the right fit.</p>
+    <a class="cta-btn" href="https://paulakirschtherapy.com/contact" target="_blank" rel="noopener noreferrer">Book Your Free Consultation</a>
+  </div>
+</div>
+
+<div class="homescreen-tip" id="homescreenTip">
+  <span class="tip-icon">📲</span>
+  <span>Save this to your home screen: tap <strong>Share</strong> → <strong>Add to Home Screen</strong> for quick access anytime.</span>
+  <button class="tip-close" onclick="document.getElementById('homescreenTip').style.display='none'" aria-label="Dismiss">✕</button>
+</div>
+
+<div class="disclaimer-box">
+  <p><strong style="color:#1a5185;">Your privacy is absolute.</strong> Nothing you answer here is saved, stored, or seen by anyone — including me. This tool has no database and no backend. When you close this page, everything is gone.</p>
+  <p>This quiz is a psychoeducational resource and is not a substitute for the real, irreplaceable relationship you have with a human therapist — and no AI ever could be. If you feel you need professional support, please reach out to a licensed mental health or sex therapy professional.</p>
+</div>
+
+<footer>
+  This quiz is for educational purposes only and does not constitute clinical advice.<br>
+  <a href="https://paulakirschtherapy.com" target="_blank">paulakirschtherapy.com</a><br>
+  &copy; 2026 Paula Kirsch, LCSW, CST &nbsp;&middot;&nbsp; All rights reserved
+</footer>
+
+<script>
+const questions = [
+  {
+    tag: "Myth or Reality?",
+    text: "Wanting sex less than your partner means something is wrong with you — or your relationship.",
+    options: ["Myth — desire differences are very common", "Reality — matched desire is healthiest", "It depends on how big the gap is"],
+    correct: 0,
+    verdict: "Myth",
+    explanation: "Desire discrepancy is one of the most common concerns couples bring to therapy. It doesn't signal incompatibility or low attraction. Desire is responsive to many factors — stress, hormones, attachment patterns — and rarely stays perfectly matched over time."
+  },
+  {
+    tag: "True or False?",
+    text: "Spontaneous desire (wanting sex \"out of nowhere\") is how most adults, of all genders, experience arousal.",
+    options: ["True", "False — responsive desire is just as normal", "Only true early in a relationship"],
+    correct: 1,
+    verdict: "False",
+    explanation: "Research by Emily Nagoski and others shows that many people — especially those with vulvas, but not exclusively — experience responsive desire: arousal that emerges in response to stimulation or context, rather than appearing spontaneously. Neither type is better. Both are normal."
+  },
+  {
+    tag: "Myth or Reality?",
+    text: "If you have to schedule sex, it means the passion is gone.",
+    options: ["Reality — spontaneity is essential", "Myth — scheduling can actually deepen intimacy", "Only matters if both partners mind"],
+    correct: 1,
+    verdict: "Myth",
+    explanation: "Scheduling sex creates anticipation, reduces the pressure of \"setting the mood\" spontaneously, and signals that intimacy is a shared priority. Many couples find that planned sex is more connected — not less — because both people show up ready."
+  },
+  {
+    tag: "True or False?",
+    text: "Arousal and desire are essentially the same thing.",
+    options: ["True — one leads naturally to the other", "False — they can operate independently", "Mostly true, with some exceptions"],
+    correct: 1,
+    verdict: "False",
+    explanation: "Arousal is a physiological response (blood flow, lubrication, erection). Desire is the psychological motivation to engage sexually. They often co-occur, but not always. Someone can feel physically aroused without wanting sex — and can deeply desire sex without immediate physical arousal. This distinction matters clinically."
+  },
+  {
+    tag: "Myth or Reality?",
+    text: "The partner with lower desire always has the \"problem.\"",
+    options: ["Reality — low desire is the clinical issue", "Myth — it's a couple dynamic, not one person's issue", "Depends on how long it has lasted"],
+    correct: 1,
+    verdict: "Myth",
+    explanation: "Desire discrepancy is a relational dynamic. The higher-desire partner's pursuit can increase the lower-desire partner's avoidance — and vice versa. Sex therapy works with the couple system, not just one person's \"level.\" Both experiences are valid starting points for conversation."
+  },
+  {
+    tag: "True or False?",
+    text: "Stress, anxiety, and mental load have little effect on sexual desire.",
+    options: ["True — desire is mostly physical", "False — psychological factors are central", "Only true for people with anxiety disorders"],
+    correct: 1,
+    verdict: "False",
+    explanation: "The brain is the most important sexual organ. Stress activates the sympathetic nervous system, which competes directly with the parasympathetic state needed for arousal and desire. Mental load — especially for partners carrying disproportionate cognitive labor — is one of the most common but least-discussed desire suppressants."
+  },
+  {
+    tag: "Myth or Reality?",
+    text: "Talking openly about sex will make things awkward or damage the mood.",
+    options: ["Reality — some things are better left unspoken", "Myth — communication builds erotic trust", "It depends on how you bring it up"],
+    correct: 1,
+    verdict: "Myth",
+    explanation: "Research consistently shows that sexual communication is one of the strongest predictors of sexual satisfaction. Couples who talk about desire, preferences, and concerns report higher intimacy — not less. Awkwardness tends to be temporary; avoidance tends to compound over time."
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function renderQuestion() {
+  const q = questions[current];
+  answered = false;
+
+  document.getElementById('qTag').textContent = q.tag;
+  document.getElementById('qText').textContent = q.text;
+  document.getElementById('qLabel').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreLabel').textContent = `${score} correct`;
+
+  const pct = (current / questions.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+
+  const opts = document.getElementById('optionsEl');
+  opts.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.textContent = opt;
+    btn.onclick = () => handleAnswer(i);
+    opts.appendChild(btn);
+  });
+
+  document.getElementById('feedbackEl').className = 'feedback';
+  document.getElementById('nextBtn').className = 'next-btn';
+}
+
+function handleAnswer(selected) {
+  if (answered) return;
+  answered = true;
+
+  const q = questions[current];
+  const buttons = document.querySelectorAll('.option-btn');
+
+  buttons.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.correct) btn.classList.add(selected === q.correct ? 'correct' : 'reveal-correct');
+    if (i === selected && selected !== q.correct) btn.classList.add('incorrect');
+  });
+
+  const isCorrect = selected === q.correct;
+  if (isCorrect) score++;
+
+  const verdict = document.getElementById('verdictEl');
+  verdict.textContent = isCorrect ? 'That\'s right' : 'Not quite';
+  verdict.className = 'feedback-verdict ' + (isCorrect ? 'correct' : 'incorrect');
+  document.getElementById('explanationEl').textContent = q.explanation;
+  document.getElementById('feedbackEl').classList.add('show');
+
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.textContent = current < questions.length - 1 ? 'Next Question' : 'See Results';
+  nextBtn.classList.add('show');
+}
+
+document.getElementById('nextBtn').onclick = () => {
+  const card = document.getElementById('quizCard');
+  card.classList.add('fade-out');
+  setTimeout(() => {
+    current++;
+    if (current < questions.length) {
+      renderQuestion();
+      card.classList.remove('fade-out');
+    } else {
+      showResults();
+    }
+  }, 280);
+};
+
+function showResults() {
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'none';
+
+  const pct = score / questions.length;
+  const circumference = 289;
+  const offset = circumference - (circumference * pct);
+
+  document.getElementById('finalScore').textContent = `${score}/${questions.length}`;
+  document.getElementById('resultsEl').classList.add('show');
+
+  setTimeout(() => {
+    document.getElementById('ringFill').style.strokeDashoffset = offset;
+  }, 100);
+
+  let heading, summary;
+  if (pct === 1) {
+    heading = "You already know a lot.";
+    summary = "A perfect score — and that foundation matters. The real work is taking these ideas from your head into your conversations with your partner.";
+  } else if (pct >= 0.7) {
+    heading = "A strong foundation.";
+    summary = "You're holding some important truths about desire and arousal. A few of the nuances may be new — and that's exactly where growth happens in couples work.";
+  } else if (pct >= 0.4) {
+    heading = "This is a great starting place.";
+    summary = "Desire and arousal are genuinely misunderstood — by most people, including many in long relationships. What matters is your curiosity and willingness to learn.";
+  } else {
+    heading = "You're in good company.";
+    summary = "Most of what we absorb about desire comes from culture, not science. This quiz is the beginning of a different conversation — and that takes courage to start.";
+  }
+
+  document.getElementById('resultsHeading').textContent = heading;
+  document.getElementById('resultsSummary').textContent = summary;
+
+  const takeaways = [
+    "Desire discrepancy is normal. It doesn't mean you're incompatible.",
+    "Responsive desire is just as valid as spontaneous desire — for any gender.",
+    "Stress and mental load are among the most overlooked desire suppressants.",
+    "Sexual communication, though uncomfortable at first, builds trust over time.",
+    "Couples therapy can help you move from parallel monologues to real dialogue."
+  ];
+
+  const tw = document.getElementById('takeawaysEl');
+  tw.innerHTML = '';
+  takeaways.forEach(t => {
+    const el = document.createElement('div');
+    el.className = 'takeaway';
+    el.textContent = t;
+    tw.appendChild(el);
+  });
+}
+
+function restart() {
+  current = 0;
+  score = 0;
+  document.getElementById('progressWrap').style.display = 'block';
+  document.getElementById('quizCard').style.display = 'block';
+  document.getElementById('resultsEl').classList.remove('show');
+  renderQuestion();
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
